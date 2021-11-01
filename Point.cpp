@@ -59,15 +59,12 @@ void Point::write(ostream& outs){
     outs << "(" << getX() << "," << getY() << ")";
 }
 
-int Point::checkRange(int val){
-    if(val >= 0 && val <DIMENSION){
+int Point::checkRange(int val) {
+    if (val >= 0 && val < DIMENSION) {
         return val;
     }
-    else if (val <0){
-        return 0;
-    }
-    else {
-        return DIMENSION-1;
+    else if (val >= DIMENSION){
+        return DIMENSION - 1;
     }
     return 0;
 }
