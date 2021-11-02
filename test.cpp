@@ -65,6 +65,39 @@ void test_Point() {
     return;
 }
 
+
+void test_Color(){
+    //test of default constructor
+    Color c1;
+    cout << "Expected: 0 0 0 , actual: " << c1 << endl;
+
+    //test non-default constructor
+     Color c2(6,70,270);
+    cout << "expected: 6 70 255 , actual: " << c2 << endl;
+    
+    //test of member function setBlue
+    c1.setBlue(12);
+    cout << "expected 0 0 12 , actual: " << c1 << endl;
+    
+    //test of mfember function getBlue
+    c1.getBlue();
+    cout << "expected 0 0 0 12 , actual: " << c1 << endl;
+    
+    // test of member function getGreen
+    Color c3;
+    c3.setGreen(100);
+    c3.getGreen();
+    cout << "expected 0 100 0 , actual: " << c3 << endl;
+    
+    return;
+    
+    
+    
+}
+
+
+
+
 void test_Line() {
     // test of default constructor
     Line l1;
