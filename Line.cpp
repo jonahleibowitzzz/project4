@@ -17,8 +17,52 @@
 // TODO: implement two Line constructors, setStart, getStart, setEnd,
 //       getEnd, setColor, getColor, read, write.
 
+Line::Line(){
+
+}
+
+Line::Line(Point pt1, Point pt2, Color color){
+
+}
+
+void Line::setStart(Point pt){
+    
+}
+
+Point Line:: getStart(){
+    Point myShape;
+    return myShape;
+}
+
+void Line::setEnd(Point pt){
+    
+}
 
 
+Point Line::getEnd(){
+    Point myShape;
+    return myShape;
+    
+}
+
+
+void Line::setColor(Color color){
+    
+}
+
+
+Color Line::getColor(){
+    Color daddy;
+    return daddy;
+}
+
+void Line::read(istream& ins){
+    
+}
+
+void Line::write(ostream& outs){
+    
+}
 // Your code goes above this line.
 // Don't change the implementations below!
 
