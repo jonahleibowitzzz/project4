@@ -35,12 +35,6 @@ using namespace std;
 
 using namespace std;
 
-// TODO: implement constructor, clear, setPixel, initArray.
-
-
-
-
-    
 Graphics::Graphics(){
     for(int row=0; row < DIMENSION; row++){
         for(int col=0; col<DIMENSION; col++){
@@ -62,6 +56,16 @@ void Graphics::clear(){
     initArray();
     
 }
+
+
+ 
+void Graphics::setPixel(int x, int y, Color color){
+    if((x>=0 && x < DIMENSION) && (y>=0 && y<DIMENSION)){
+        pixelData[x][y] = color;
+    }
+}
+
+
     
 // Your code goes above this line.
 // Don't change the implementation below!
