@@ -20,8 +20,101 @@ using namespace std;
 
 // TODO: implement two constructors, setCenter, getCenter, setColor, getColor,
 //       setRadius, getRadius, read, write.
+/*
+* Requires: Nothing.
+* Modifies: Nothing.
+* Effects:  Default contructor.
+*/
+Circle::Circle(){
+    //WHAT'S THIS SUPPOSED TO DO??
+};
 
+/**
+* Requires: Nothing.
+* Modifies: center, radius, color.
+* Effects:  Overloaded contructor. Sets center, radius and single color.
+*           Radius of must be positive, so you must call checkRadius.
+*/
+Circle::Circle(Point pt, int r, Color c){
+    radius = checkRadius(r);
+};
 
+/**
+* Requires: Nothing.
+* Modifies: center.
+* Effects:  Sets center of circle.
+*/
+void Circle::setCenter(Point pt){
+    
+};
+
+/**
+* Requires: Nothing.
+* Modifies: Nothing.
+* Effects:  Returns center of circle.
+*/
+Point Circle::getCenter(){
+    Point gooch;
+    return gooch;
+};
+
+/**
+* Requires: Nothing.
+* Modifies: radius.
+* Effects:  Sets radius of circle. Radius of circle must be positive,
+*           so you must call checkRadius.
+*/
+void Circle::setRadius(int r){
+    
+};
+
+/**
+* Requires: Nothing.
+* Modifies: Nothing.
+* Effects:  Returns radius of circle.
+*/
+int Circle::getRadius(){
+    
+    return 0;
+};
+
+/**
+* Requires: Nothing.
+* Modifies: color.
+* Effects:  Sets color of circle.
+*/
+void Circle::setColor(Color c){
+    
+};
+
+/**
+* Requires: Nothing.
+* Modifies: Nothing.
+* Effects:  Returns color of circle.
+*/
+Color Circle::getColor(){
+    Color gooch;
+    return gooch;
+};
+
+/**
+* Requires: ins is in good state.
+* Modifies: ins, center, radius, color.
+* Effects:  Read circle in form center radius color
+*/
+void Circle::read(istream& ins){
+    
+};
+
+/**
+* Requires: outs is in good state.
+* Modifies: outs.
+* Effects:  Writes circle in form center radius color
+*/
+void Circle::write(ostream& outs){
+    
+};
+////////////////////////////////////////////////////////////////////////////
 
 // Your code goes above this line.
 // Don't change the implementations below!
@@ -94,3 +187,4 @@ void Circle::plot4points(int x, int y, Color c, Graphics& drawer)
     Line line2(pt2Start, pt2End, c);
     line2.draw(drawer);
 }
+
