@@ -24,8 +24,45 @@ using namespace std;
 
 // TODO: implement constructor, clear, setPixel, initArray.
 
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+
+#include "Graphics.h"
+#include "bmp.h"
+
+using namespace std;
+
+// TODO: implement constructor, clear, setPixel, initArray.
 
 
+
+
+    
+Graphics::Graphics(){
+    for(int row=0; row < DIMENSION; row++){
+        for(int col=0; col<DIMENSION; col++){
+            pixelData[row][col] = Color(0, 0, 0);
+            
+        }
+    }
+}
+
+void Graphics::initArray(){
+    for(int row=0; row < DIMENSION; row++){
+        for(int col=0; col<DIMENSION; col++){
+            pixelData[row][col] = Color(0, 0, 0);
+        }
+    }
+}
+
+void Graphics::clear(){
+    initArray();
+    
+}
+    
 // Your code goes above this line.
 // Don't change the implementation below!
 
