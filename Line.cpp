@@ -18,50 +18,52 @@
 //       getEnd, setColor, getColor, read, write.
 
 Line::Line(){
-
 }
 
 Line::Line(Point pt1, Point pt2, Color color){
-
+    start = pt1;
+    end = pt2;
+    lineColor = color;
 }
 
 void Line::setStart(Point pt){
-    
+    start = pt;
 }
 
 Point Line:: getStart(){
-    Point myShape;
-    return myShape;
+    return start;
 }
 
 void Line::setEnd(Point pt){
-    
+    end  = pt;
 }
 
 
 Point Line::getEnd(){
-    Point myShape;
-    return myShape;
-    
+    return end;
 }
 
 
 void Line::setColor(Color color){
-    
+    lineColor = color;
 }
 
 
 Color Line::getColor(){
-    Color daddy;
-    return daddy;
+    return lineColor;
 }
 
 void Line::read(istream& ins){
+    if(ins.good()){
+        ins >> start >> end >> lineColor;
+    }
     
 }
 
 void Line::write(ostream& outs){
-    
+    if(outs.good()){
+        outs << start << " " << end << " " << lineColor;
+    }
 }
 // Your code goes above this line.
 // Don't change the implementations below!
