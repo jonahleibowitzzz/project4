@@ -20,24 +20,26 @@ using namespace std;
 
 // TODO: implement two constructors, setCenter, getCenter, setColor, getColor,
 //       setRadius, getRadius, read, write.
-/*
-* Requires: Nothing.
-* Modifies: Nothing.
-* Effects:  Default contructor.
-*/
+
 Circle::Circle(){
     //WHAT'S THIS SUPPOSED TO DO??
-};
+}
+
+
 
 /**
-* Requires: Nothing.
-* Modifies: center, radius, color.
-* Effects:  Overloaded contructor. Sets center, radius and single color.
-*           Radius of must be positive, so you must call checkRadius.
-*/
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns absolute value of radius.
+ */
+
+
+
 Circle::Circle(Point pt, int r, Color c){
-    radius = checkRadius(r);
-};
+    center = pt;
+    radius = r;
+    color = c;
+}
 
 /**
 * Requires: Nothing.
@@ -45,8 +47,8 @@ Circle::Circle(Point pt, int r, Color c){
 * Effects:  Sets center of circle.
 */
 void Circle::setCenter(Point pt){
-    
-};
+    center = pt;
+}
 
 /**
 * Requires: Nothing.
@@ -54,9 +56,8 @@ void Circle::setCenter(Point pt){
 * Effects:  Returns center of circle.
 */
 Point Circle::getCenter(){
-    Point gooch;
-    return gooch;
-};
+    return center;
+}
 
 /**
 * Requires: Nothing.
@@ -65,8 +66,8 @@ Point Circle::getCenter(){
 *           so you must call checkRadius.
 */
 void Circle::setRadius(int r){
-    
-};
+    radius = checkRadius(r);
+}
 
 /**
 * Requires: Nothing.
@@ -74,9 +75,9 @@ void Circle::setRadius(int r){
 * Effects:  Returns radius of circle.
 */
 int Circle::getRadius(){
+    return radius;
     
-    return 0;
-};
+}
 
 /**
 * Requires: Nothing.
@@ -84,8 +85,8 @@ int Circle::getRadius(){
 * Effects:  Sets color of circle.
 */
 void Circle::setColor(Color c){
-    
-};
+    color = c;
+}
 
 /**
 * Requires: Nothing.
@@ -93,9 +94,8 @@ void Circle::setColor(Color c){
 * Effects:  Returns color of circle.
 */
 Color Circle::getColor(){
-    Color gooch;
-    return gooch;
-};
+    return color;
+}
 
 /**
 * Requires: ins is in good state.
@@ -104,7 +104,7 @@ Color Circle::getColor(){
 */
 void Circle::read(istream& ins){
     
-};
+}
 
 /**
 * Requires: outs is in good state.
@@ -112,10 +112,10 @@ void Circle::read(istream& ins){
 * Effects:  Writes circle in form center radius color
 */
 void Circle::write(ostream& outs){
-    
-};
-////////////////////////////////////////////////////////////////////////////
-
+    if(outs.good()){
+    outs << center << " " << radius << " " << color;
+    }
+}
 // Your code goes above this line.
 // Don't change the implementations below!
 
@@ -156,8 +156,7 @@ void Circle::draw(Graphics & drawer)
     }
 }
 
-int Circle::checkRadius(int radius)
-{
+int Circle::checkRadius(int radius){
     if (radius < 0)
     {
         return -1 * radius;
