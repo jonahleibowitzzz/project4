@@ -23,6 +23,7 @@ using namespace std;
 
 Circle::Circle(){
     //WHAT'S THIS SUPPOSED TO DO??
+    radius = 0;
 }
 
 
@@ -37,7 +38,7 @@ Circle::Circle(){
 
 Circle::Circle(Point pt, int r, Color c){
     center = pt;
-    radius = r;
+    radius = checkRadius(r);
     color = c;
 }
 
@@ -186,4 +187,3 @@ void Circle::plot4points(int x, int y, Color c, Graphics& drawer)
     Line line2(pt2Start, pt2End, c);
     line2.draw(drawer);
 }
-
