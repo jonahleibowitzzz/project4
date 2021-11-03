@@ -128,17 +128,23 @@ void test_Rectangle() {
     Point p2(7, 8);
     Color c(0,0,0);
     Color d(0,100,0);
-    Rectangle r2(p1, p2, c, d, d, c);
+    
+    Rectangle r2(p1, p2, d);
+    cout << "Expected: (3,9), actual: " << r2 << endl;
+    
+    
+    Rectangle r3(p1, p2, c, d, d, c);
     cout << "Expected: (3,9), actual: " << r2 << endl;
     
     // test of member function: setColor()
     r1.setColor(d);
      cout << "Expected:, actual: " << r1 << endl;
         // test of member function: getEnd()
-    cout << "Expected: (7,8), actual: " << r2.getEnd() << endl;
+    cout << "Expected: (7,8), actual: " << r3.getEnd() << endl;
     // test of member function: setStart()
     r1.setStart(p1);
      cout << "Expected:, actual: " << r1 << endl;
+    
     
     return;
 }
