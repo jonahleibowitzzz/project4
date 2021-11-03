@@ -156,3 +156,24 @@ void test_Rectangle() {
     return;
 }
 
+void test_Circle(){
+    
+    Circle c1;
+    cout << "Testing constructor default: " << c1 << endl;
+    
+    Point center;
+    Color mine(13,13,13);
+    int radius = 5;
+    Circle c2(center, radius, mine);
+    
+    cout << "Testing constructor default: " << c2 << endl;
+    
+    Point center2(5,5);
+    c2.setCenter(center2);
+    cout << "Testing setCenter: " << c2 << endl;
+    
+    int radius2 = 3;
+    c2.setRadius(radius2);
+    cout << "Testing setCenter: " << c2 << endl;
+}
+
