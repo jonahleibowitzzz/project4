@@ -104,6 +104,12 @@ void test_Line() {
     Line l1;
     cout << "Expected: (0,0), actual: " << l1 << endl;
     
+    Point p1(0,0);
+    Point p2(5,5);
+    Color yes(7,7,7);
+    Line l2(p1, p2, yes);
+    cout << "Expected: (0,0), actual: " << l2 << endl;
+    
     // test of the set end
     Point testEnd(3,42);
     l1.setEnd(testEnd);
@@ -111,10 +117,11 @@ void test_Line() {
     
     // test of member function: getStart
     Point testStart(99,99);
-    l1.setStart(testStart);
-    cout << "Expected: (99,99), actual: " << l1 << endl;
+    cout << l1.getStart() << endl;
      
-    // test of member function: write (all above)
+    // test of member function: write
+    //HOW DO I DO THIS ONE???
+    
     return;
 }
 
