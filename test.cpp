@@ -141,7 +141,7 @@ void test_Rectangle() {
     
     
     Rectangle r3(p1, p2, c, d, d, c);
-    cout << "Expected: (3,9), actual: " << r2 << endl;
+    cout << "Expected: (3,9), actual: " << r3 << endl;
     
     // test of member function: setColor()
     r1.setColor(d);
