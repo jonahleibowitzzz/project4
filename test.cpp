@@ -37,6 +37,8 @@ void startTests() {
     test_Point();
     test_Line();
     test_Rectangle();
+    test_Circle();
+    test_Color();
     
     // call other test functions here
     
