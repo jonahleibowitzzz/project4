@@ -36,6 +36,7 @@ void test_Triangle();
 void startTests() {
     test_Point();
     test_Line();
+    test_Rectangle();
     
     // call other test functions here
     
@@ -117,5 +118,28 @@ void test_Line() {
     return;
 }
 
-
+void test_Rectangle() {
+    // test of default constructor
+    Rectangle r1;
+    cout << "Expected: , actual: " << r1 << endl;
+    
+    // test of the non-default constructor
+    Point p1(3, 9);
+    Point p2(7, 8);
+    Color c(0,0,0);
+    Color d(0,100,0);
+    Rectangle r2(p1, p2, c, d, d, c);
+    cout << "Expected: (3,9), actual: " << r2 << endl;
+    
+    // test of member function: setColor()
+    r1.setColor(d);
+     cout << "Expected:, actual: " << r1 << endl;
+        // test of member function: getEnd()
+    cout << "Expected: (7,8), actual: " << r2.getEnd() << endl;
+    // test of member function: setStart()
+    r1.setStart(p1);
+     cout << "Expected:, actual: " << r1 << endl;
+    
+    return;
+}
 
