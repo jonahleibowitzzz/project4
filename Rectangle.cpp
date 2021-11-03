@@ -29,7 +29,7 @@ using namespace std;
 */
 Rectangle::Rectangle(){
     
-};
+}
 
 /**
 * Requires: Nothing.
@@ -38,8 +38,13 @@ Rectangle::Rectangle(){
 * Effects:  Overloaded contructor. Sets start, end and single color.
 */
 Rectangle::Rectangle(Point pt1, Point pt2, Color color){
-    
-};
+    start = pt1;
+    end = pt2;
+    colorTopLeft = color;
+    colorTopRight = color;
+    colorBottomRight = color;
+    colorBottomLeft = color;
+}
 
 /**
 * Requires: Nothing.
@@ -49,8 +54,13 @@ Rectangle::Rectangle(Point pt1, Point pt2, Color color){
 */
 Rectangle::Rectangle(Point pt1, Point pt2, Color cTopLeft, Color cTopRight,
           Color cBottomRight, Color cBottomLeft){
-    
-};
+    start = pt1;
+    end = pt2;
+    colorTopLeft = cTopLeft;
+    colorTopRight = cTopRight;
+    colorBottomRight = cBottomRight;
+    colorBottomLeft = cBottomLeft;
+}
 
 /**
 * Requires: Nothing.
@@ -58,8 +68,8 @@ Rectangle::Rectangle(Point pt1, Point pt2, Color cTopLeft, Color cTopRight,
 * Effects:  Sets start point (top left) of rectangle.
 */
 void Rectangle::setStart(Point pt){
-    
-};
+    start = pt;
+}
 
 /**
 * Requires: Nothing.
@@ -67,10 +77,8 @@ void Rectangle::setStart(Point pt){
 * Effects:  Returns start point of rectangle.
 */
 Point Rectangle::getStart(){
-    Point myShape;
-    
-    return myShape;
-};
+    return start;
+}
 
 /**
 * Requires: Nothing.
@@ -78,8 +86,8 @@ Point Rectangle::getStart(){
 * Effects:  Sets end point (bottom right) of rectangle.
 */
 void Rectangle::setEnd(Point pt){
-    
-};
+    end = pt;
+}
 
 /**
 * Requires: Nothing.
@@ -87,9 +95,8 @@ void Rectangle::setEnd(Point pt){
 * Effects:  Returns end point of rectangle.
 */
 Point Rectangle::getEnd(){
-    Point myShape;
-    return myShape;
-};
+    return end;
+}
 
 /**
 * Requires: Nothing.
@@ -97,8 +104,11 @@ Point Rectangle::getEnd(){
 * Effects:  Sets the four colors of rectangle to color.
 */
 void Rectangle::setColor(Color color){
-    
-};
+    colorTopLeft = color;
+    colorTopRight = color;
+    colorBottomRight = color;
+    colorBottomLeft = color;
+}
 
 /**
 * Requires: Nothing.
@@ -106,8 +116,8 @@ void Rectangle::setColor(Color color){
 * Effects:  Sets top left color of rectangle.
 */
 void Rectangle::setColorTopLeft(Color color){
-    
-};
+    colorTopLeft = color;
+}
 
 /**
 * Requires: Nothing.
@@ -115,10 +125,9 @@ void Rectangle::setColorTopLeft(Color color){
 * Effects:  Returns top left color of rectangle.
 */
 Color Rectangle::getColorTopLeft(){
-    Color gooch;
-    return gooch;
+    return colorTopLeft;
     
-};
+}
 
 /**
 * Requires: Nothing.
@@ -126,8 +135,8 @@ Color Rectangle::getColorTopLeft(){
 * Effects:  Sets top right color of rectangle.
 */
 void Rectangle::setColorTopRight(Color color){
-    
-};
+    colorTopRight = color;
+}
 
 /**
 * Requires: Nothing.
@@ -135,9 +144,8 @@ void Rectangle::setColorTopRight(Color color){
 * Effects:  Returns top right color of rectangle.
 */
 Color Rectangle::getColorTopRight(){
-    Color gooch;
-    return gooch;
-};
+    return colorTopRight;
+}
 
 /**
 * Requires: Nothing.
@@ -145,8 +153,8 @@ Color Rectangle::getColorTopRight(){
 * Effects:  Sets bottom rihgt color of rectangle.
 */
 void Rectangle::setColorBottomRight(Color color){
-    
-};
+    colorBottomRight = color;
+}
 
 /**
 * Requires: Nothing.
@@ -154,9 +162,8 @@ void Rectangle::setColorBottomRight(Color color){
 * Effects:  Returns bottom right color of rectangle.
 */
 Color Rectangle::getColorBottomRight(){
-    Color gooch;
-    return gooch;
-};
+    return colorBottomRight;
+}
 
 /**
 * Requires: Nothing.
@@ -164,8 +171,8 @@ Color Rectangle::getColorBottomRight(){
 * Effects:  Sets bottom left color of rectangle.
 */
 void Rectangle::setColorBottomLeft(Color c){
-    
-};
+    colorBottomLeft = c;
+}
 
 /**
 * Requires: Nothing.
@@ -173,9 +180,8 @@ void Rectangle::setColorBottomLeft(Color c){
 * Effects:  Returns bottom left color of rectangle.
 */
 Color Rectangle::getColorBottomLeft(){
-    Color gooch;
-    return gooch;
-};
+    return colorBottomLeft;
+}
 
 /**
 * Requires: ins is in good state.
@@ -186,8 +192,30 @@ Color Rectangle::getColorBottomLeft(){
 *           start end cTopLeft cTopRight cBottomRight cBottomLeft
 */
 void Rectangle::read(istream& ins){
+    /*
+     Plan:
+     
+     
+     */
+    if(ins.good()){
+        Color color;
+        ins >> start >> end >> color;
+        colorTopLeft = color;
+        colorTopRight = color;
+        colorBottomRight = color;
+        colorBottomLeft = color;
+    }
+        if(!ins.good()){
+            ins.clear();
+            return;
+        }
+        else {
+            cin.clear();
+            ins >> colorTopRight >> colorBottomRight >> colorBottomLeft;
+        }
     
-};
+    
+}
 
 /**
 * Requires: outs is in good state.
@@ -196,8 +224,11 @@ void Rectangle::read(istream& ins){
 *           start end cTopLeft cTopRight cBottomRight cBottomLeft
 */
 void Rectangle::write(ostream& outs){
-    
-};
+    if(outs.good()){
+        outs << start << " " << end << " " << colorTopLeft << " " <<
+        colorTopRight << " " << colorBottomRight << " " << colorBottomLeft;
+    }
+}
 
 
 // Your code goes above this line.
@@ -250,3 +281,4 @@ void Rectangle::draw(Graphics & drawer)
     left.draw(drawer);
     right.draw(drawer);
 }
+
