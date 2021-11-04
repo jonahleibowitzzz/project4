@@ -141,66 +141,57 @@ void coolPics()
  */
 void writeFile(const Graphics& drawer)
 {
+    // This will make use of Graphics::writeFile()
     string fileName;
-  //  ins >> fileName;
-    
-    
+    cin >> fileName;
     fileName = fileName + ".bmp";
     
+    drawer.writeFile(fileName);
     
-    
-    cout << "[Wrote " << fileName << "]";
-    // TODO: implement
-    // This will make use of Graphics::writeFile()
-    
-    
+    cout << "[Wrote " << fileName << "]" << endl;
 }
-/*
-Requires: Nothing.
-* Modifies: cin, drawer.
-* Effects:
-*     Opens a file
-*     Start with a blank canvas (drawer)
-*     Start reading from file.  For each line....
-*        Read the 1st character to determine shape
-*        Read the shape:  L reads a line, C reads a circle, T read a triangle
-*            R reads a rectangle.
-*            For any other character, clears drawer and prints
-*            "Error in input file: " << [character already read]
-*            << [all chars remaining on the line] << endl;
-*        Draw shape on canvas
-*     Close file
-*     Print "[Loaded <filename>]", where <filename> is replaced with
-*                                  the name of the file.*/
+
+
 void loadFile(Graphics& drawer)
 {
     // TODO: implement
- //   ifstream gimmeDat;
- //   openFile(gimmeDat);
-    
-    //NECESSARY OR IS THERE AN EASIER WAY???
-  //  int numLines;
-   // string placeHolder;
-    
-    /*
-    
+    ifstream ins;
+   string fileName = openFile(ins);
     char shape;
-    for(int i = 0; ){
-        gimmeDat >> shape;
-        if(shape == 'L'){
-            Line::read(gimmeDat);
+    string placeHolder;
+    
+    
+    while(ins >> shape){
+        Line line;
+        Triangle triangle;
+        Circle circle;
+        Rectangle rectangle;
+        
+        if (shape == 'L') {
+            ins >> line;
+            line.draw(drawer);
         }
-        else if(shape == 'C'){
-            Circle::read(gimmeDat);
+        else if (shape == 'T') {
+            ins >> triangle;
+            triangle.draw(drawer);
         }
-        else if(shape == 'T'){
-            Triangle::read(gimmeDat);
+        else if (shape == 'C') {
+            ins >> circle;
+            circle.draw(drawer);
         }
-        else if(shape == 'R'){
-            Rectangle::read(gimmeDat);
+        else if (shape == 'R') {
+            ins >> rectangle;
+            rectangle.draw(drawer);
         }
-
-    }*/
+        else{
+            getline(ins, placeHolder);
+            cout << "Error in input file: " << shape << placeHolder << endl;
+            ins.close();
+            return;
+        }
+    }
+    ins.close();
+    cout << "[Loaded " << fileName << "]" << endl;
 }
 
 /**
@@ -273,4 +264,3 @@ string openFile(ifstream& ins)
 
     return fileName;
 }
-
