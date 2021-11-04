@@ -8,7 +8,7 @@
  * <#Name(s)#>
  * <#uniqname(s)#>
  *
- * Contains functions for testing classes in the project. 
+ * Contains functions for testing classes in the project.
  */
 
 #include "Graphics.h"
@@ -39,6 +39,7 @@ void startTests() {
     test_Rectangle();
     test_Circle();
     test_Color();
+    
     
     // call other test functions here
     
@@ -75,22 +76,22 @@ void test_Color(){
     cout << "Expected: 0 0 0 , actual: " << c1 << endl;
 
     //test non-default constructor
-     Color c2(6,70,270);
-    cout << "expected: 6 70 255 , actual: " << c2 << endl;
+     Color c2(6,70,200);
+    cout << "expected: 6 70 200 , actual: " << c2 << endl;
     
     //test of member function setBlue
-    c1.setBlue(12);
-    cout << "expected 0 0 12 , actual: " << c1 << endl;
+    c1.setBlue(-2);
+    cout << "expected 0 0 0 , actual: " << c1 << endl;
     
     //test of mfember function getBlue
-    c1.getBlue();
-    cout << "expected 0 0 0 12 , actual: " << c1 << endl;
+    cout << c1.getBlue();
+    cout << "expected 0 0 0 0 , actual: " << c1 << endl;
     
     // test of member function getGreen
     Color c3;
-    c3.setGreen(100);
-    c3.getGreen();
-    cout << "expected 0 100 0 , actual: " << c3 << endl;
+    c3.setGreen(280);
+    cout << c3.getGreen();
+    cout << "expected 0 255 0 , actual: " << c3 << endl;
     
     return;
     
@@ -158,6 +159,11 @@ void test_Rectangle() {
     return;
 }
 
+void test_Triangle(){
+    
+}
+
+
 void test_Circle(){
     
     Circle c1;
@@ -178,4 +184,7 @@ void test_Circle(){
     c2.setRadius(radius2);
     cout << "Testing setCenter: " << c2 << endl;
 }
+
+
+
 
