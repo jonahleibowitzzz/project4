@@ -104,7 +104,7 @@ Color Circle::getColor(){
 * Effects:  Read circle in form center radius color
 */
 void Circle::read(istream& ins){
-    
+    ins >> center >> radius >> color;
 }
 
 /**
@@ -114,7 +114,7 @@ void Circle::read(istream& ins){
 */
 void Circle::write(ostream& outs){
     if(outs.good()){
-    outs << center << " " << radius << " " << color;
+    outs << center << radius << color;
     }
 }
 // Your code goes above this line.
