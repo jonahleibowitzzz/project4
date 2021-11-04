@@ -130,22 +130,90 @@ void coolPics()
     
     return;
 }
-
+/**
+ * Requires: Nothing.
+ * Modifies: cin, cout, drawer.
+ * Effects:
+ *     Read filename from user
+ *     concatenate filename with .bmp
+ *     Write image to file.
+ *     Print "[Wrote filename]"
+ */
 void writeFile(const Graphics& drawer)
 {
+    string fileName;
+  //  ins >> fileName;
+    
+    
+    fileName = fileName + ".bmp";
+    
+    
+    
+    cout << "[Wrote " << fileName << "]";
     // TODO: implement
     // This will make use of Graphics::writeFile()
+    
+    
 }
-
+/*
+Requires: Nothing.
+* Modifies: cin, drawer.
+* Effects:
+*     Opens a file
+*     Start with a blank canvas (drawer)
+*     Start reading from file.  For each line....
+*        Read the 1st character to determine shape
+*        Read the shape:  L reads a line, C reads a circle, T read a triangle
+*            R reads a rectangle.
+*            For any other character, clears drawer and prints
+*            "Error in input file: " << [character already read]
+*            << [all chars remaining on the line] << endl;
+*        Draw shape on canvas
+*     Close file
+*     Print "[Loaded <filename>]", where <filename> is replaced with
+*                                  the name of the file.*/
 void loadFile(Graphics& drawer)
 {
     // TODO: implement
+ //   ifstream gimmeDat;
+ //   openFile(gimmeDat);
+    
+    //NECESSARY OR IS THERE AN EASIER WAY???
+  //  int numLines;
+   // string placeHolder;
+    
+    /*
+    
+    char shape;
+    for(int i = 0; ){
+        gimmeDat >> shape;
+        if(shape == 'L'){
+            Line::read(gimmeDat);
+        }
+        else if(shape == 'C'){
+            Circle::read(gimmeDat);
+        }
+        else if(shape == 'T'){
+            Triangle::read(gimmeDat);
+        }
+        else if(shape == 'R'){
+            Rectangle::read(gimmeDat);
+        }
+
+    }*/
 }
 
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns str with all of its alphabetical characters lowercased.*/
 string tolower(string str)
 {
-    // TODO: implement
-
+    for(int i = 0; i < str.size(); i++){
+        if(str.at(i) >= 'A' && str.at(i) <= 'Z'){
+            str.at(i) += 'a' - 'A';
+        }
+    }
     return str;
 }
 
@@ -205,3 +273,4 @@ string openFile(ifstream& ins)
 
     return fileName;
 }
+
