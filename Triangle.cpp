@@ -200,6 +200,10 @@ Color Triangle::getVertexThreeColor(){
  *           v1 v1Color v2 v2Color v3 v3Color
  */
 void Triangle::read(istream& ins){
+    if (ins.good()){
+        ins >> vertexOne >> vertexOneColor >> vertexTwo
+        >> vertexTwoColor >> vertexThree >> vertexThreeColor;
+    }
 }
 /**
  * Requires: outs is in good state.
