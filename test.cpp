@@ -84,19 +84,18 @@ void test_Color(){
     cout << "expected 0 0 0 , actual: " << c1 << endl;
     
     //test of mfember function getBlue
-    cout << c1.getBlue();
-    cout << "expected 0 0 0 0 , actual: " << c1 << endl;
+    cout << c2.getBlue() << endl;
+    cout << "expected 0 0 0 , actual: " << c1 << endl;
     
     // test of member function getGreen
     Color c3;
     c3.setGreen(280);
-    cout << c3.getGreen();
+    cout << c3.getGreen() << endl;
     cout << "expected 0 255 0 , actual: " << c3 << endl;
     
+    Color c4(500, 16, -123);
+    cout << "Testing color check range: " << c4 << endl;
     return;
-    
-    
-    
 }
 
 
@@ -180,9 +179,17 @@ void test_Circle(){
     c2.setCenter(center2);
     cout << "Testing setCenter: " << c2 << endl;
     
+    Circle c3;
+    cout << "Testing setRadius: " << c3 << endl;
     int radius2 = 3;
-    c2.setRadius(radius2);
-    cout << "Testing setCenter: " << c2 << endl;
+    c3.setRadius(radius2);
+    cout << "Testing setCenter: " << c3 << endl;
+    
+    Circle c4;
+    c4.setRadius(10);
+    cout <<"Testing setRadius: " << c4 << endl;
+    c4.setRadius(-10);
+    cout <<"Testing setRadius: " << c4 << endl;
 }
 
 
