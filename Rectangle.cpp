@@ -192,29 +192,10 @@ Color Rectangle::getColorBottomLeft(){
 *           start end cTopLeft cTopRight cBottomRight cBottomLeft
 */
 void Rectangle::read(istream& ins){
-    /*
-     Plan:
-     
-     
-     */
     if(ins.good()){
-        Color color;
-        ins >> start >> end >> color;
-        colorTopLeft = color;
-        colorTopRight = color;
-        colorBottomRight = color;
-        colorBottomLeft = color;
+        ins >> start >> end >> colorTopRight >> colorTopLeft >>
+                            colorBottomRight >> colorBottomLeft;
     }
-        if(!ins.good()){
-            ins.clear();
-            return;
-        }
-        else {
-            cin.clear();
-            ins >> colorTopRight >> colorBottomRight >> colorBottomLeft;
-        }
-    
-    
 }
 
 /**
